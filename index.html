@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Wind Breakers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    .glow-frame {
+      box-shadow: 0 0 20px rgba(147, 51, 234, 0.8), 0 0 40px rgba(59, 130, 246, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .glow-frame:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(236, 72, 153, 0.9), 0 0 50px rgba(59, 130, 246, 0.8);
+    }
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 50;
+    }
+    .floating-btn a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      color: white;
+      font-size: 26px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+    .floating-btn a:hover {
+      transform: scale(1.1);
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/2d3e5e6f52.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-950 text-white font-sans">
+  <!-- Header -->
+  <header class="text-center py-8 bg-gradient-to-r from-purple-600 to-blue-500 shadow-lg">
+    <h1 class="text-4xl md:text-5xl font-bold tracking-wide">Team Wind Breakers</h1>
+    <p class="mt-2 text-lg md:text-xl">Instagram Paid Bans & Unbans</p>
+    <p class="mt-2 text-sm md:text-base italic">“We can't break rules, we break ID's.”</p>
+  </header>
+
+  <!-- About Section -->
+  <section class="max-w-3xl mx-auto py-12 px-6 sr-fade">
+    <h2 class="text-2xl md:text-3xl font-semibold mb-4 border-b border-gray-700 pb-2">About Us</h2>
+    <p class="text-gray-300 leading-relaxed text-base md:text-lg">
+      We are <strong>Team Wind Breakers</strong>, a trusted group specializing in Instagram account bans and unbans. Whether you need paid bans or unbans, we provide fast and reliable services to help you achieve your goals.
+    </p>
+  </section>
+
+  <!-- Team Section -->
+  <section class="bg-gray-900 py-12 px-6 sr-up">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-6 border-b border-gray-700 pb-2">Our Team</h2>
+      <div class="bg-gray-800 rounded-2xl p-6 shadow-md inline-block">
+        <img src="1350.jpg" alt="Pranjal Profile" class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full border-4 border-purple-600 shadow-lg mb-4 object-cover">
+        <h3 class="text-xl md:text-2xl font-semibold">Team Owner</h3>
+        <p class="text-gray-300 mt-2 text-base md:text-lg">Pranjal</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="bg-gray-950 py-12 px-6 sr-fade">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-6 border-b border-gray-700 pb-2">Our Services</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gray-800 rounded-2xl p-6 shadow-md hover:scale-105 transform transition duration-300">
+          <h3 class="text-xl font-semibold mb-2">Paid Bans</h3>
+          <p class="text-gray-400">Get accounts banned on Instagram with our fast and effective service.</p>
+        </div>
+        <div class="bg-gray-800 rounded-2xl p-6 shadow-md hover:scale-105 transform transition duration-300">
+          <h3 class="text-xl font-semibold mb-2">Account Unbans</h3>
+          <p class="text-gray-400">Recover your banned Instagram accounts with our expert unban solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment Section -->
+  <section class="bg-gray-900 py-12 px-6 sr-up">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-4 border-b border-gray-700 pb-2">Payment</h2>
+      <p class="text-gray-300 mb-6 text-base md:text-lg">Scan the QR code below to make a secure payment.</p>
+      <div class="flex justify-center mb-6">
+        <img src="1566.jpg" alt="Payment QR Code" class="w-48 h-48 md:w-56 md:h-56 rounded-lg border border-gray-700 glow-frame">
+      </div>
+      <a href="1566.jpg" download class="bg-gradient-to-r from-green-500 to-emerald-600 px-6 py-3 rounded-xl shadow-md font-medium hover:opacity-90">Download QR</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="max-w-3xl mx-auto py-12 px-6 text-center sr-fade">
+    <h2 class="text-2xl md:text-3xl font-semibold mb-4 border-b border-gray-700 pb-2">Contact Us</h2>
+    <p class="text-gray-300 mb-6 text-base md:text-lg">Reach out to us on Instagram or Telegram for services.</p>
+    <div class="space-x-4">
+      <a href="https://instagram.com/uvulh" target="_blank" class="bg-gradient-to-r from-purple-600 to-pink-500 px-6 py-3 rounded-xl shadow-md font-medium hover:opacity-90">Instagram</a>
+      <a href="https://t.me/" target="_blank" class="bg-blue-600 px-6 py-3 rounded-xl shadow-md font-medium hover:opacity-90">Telegram</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 bg-gray-900 text-gray-500 text-sm">
+    © 2025 Team Wind Breakers. All Rights Reserved.
+  </footer>
+
+  <!-- Floating Contact Button -->
+  <div class="floating-btn">
+    <a href="https://instagram.com/uvulh" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+
+  <!-- ScrollReveal Animations -->
+  <script>
+    ScrollReveal().reveal('.sr-fade', { duration: 1000, distance: '30px', easing: 'ease-in-out', origin: 'bottom', interval: 200 });
+    ScrollReveal().reveal('.sr-up', { duration: 1200, distance: '40px', easing: 'ease-in-out', origin: 'top', interval: 200 });
+  </script>
+</body>
+</html>
