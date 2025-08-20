@@ -1,0 +1,196 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Wind Breakers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: #00f7ff;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
+    }
+
+    /* Particle canvas */
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .overlay {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .team-name {
+      font-size: 3rem;
+      text-shadow: 0 0 20px #00f7ff, 0 0 40px #0077ff;
+      animation: flicker 5s infinite;
+    }
+
+    .slogan {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      text-shadow: 0 0 15px #00f7ff, 0 0 30px #0077ff;
+      animation: glitch 2s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+      }
+      20%, 24%, 55% {
+        opacity: 0.4;
+      }
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px #0077ff, -2px -2px #00f7ff; }
+      25% { text-shadow: -2px -2px #0077ff, 2px 2px #00f7ff; }
+      50% { text-shadow: 2px -2px #0077ff, -2px 2px #00f7ff; }
+      75% { text-shadow: -2px 2px #0077ff, 2px -2px #00f7ff; }
+      100% { text-shadow: 2px 2px #0077ff, -2px -2px #00f7ff; }
+    }
+
+    .profile {
+      margin: 30px auto;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #00f7ff;
+      box-shadow: 0 0 20px #00f7ff, 0 0 40px #0077ff;
+      animation: pulse 3s infinite;
+    }
+
+    .profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px #00f7ff, 0 0 20px #0077ff; }
+      50% { box-shadow: 0 0 30px #00f7ff, 0 0 60px #0077ff; }
+      100% { box-shadow: 0 0 10px #00f7ff, 0 0 20px #0077ff; }
+    }
+
+    .qr {
+      margin: 20px auto;
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00f7ff;
+      transition: 0.3s;
+    }
+    .qr:hover {
+      box-shadow: 0 0 30px #00f7ff, 0 0 50px #0077ff;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin: 15px;
+      padding: 12px 25px;
+      color: #00f7ff;
+      border: 2px solid #00f7ff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      text-shadow: 0 0 10px #00f7ff;
+    }
+    .buttons a:hover {
+      background: #00f7ff;
+      color: #000;
+      box-shadow: 0 0 20px #00f7ff, 0 0 40px #0077ff;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <div class="overlay">
+    <h1 class="team-name">TEAM WIND BREAKERS</h1>
+    <p class="slogan">We can't break rules, we break IDs</p>
+
+    <div class="profile">
+      <img src="profile.jpg" alt="Owner Profile">
+    </div>
+
+    <div>
+      <img src="qr.jpg" alt="QR Code" class="qr">
+    </div>
+
+    <div class="buttons">
+      <a href="https://instagram.com/uvulh" target="_blank">Instagram</a>
+      <a href="https://t.me/" target="_blank">Telegram</a>
+    </div>
+  </div>
+
+  <script>
+    // Particle effect
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particlesArray;
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = (Math.random() - 0.5) * 1;
+        this.speedY = (Math.random() - 0.5) * 1;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+      }
+      draw() {
+        ctx.fillStyle = '#00f7ff';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function init() {
+      particlesArray = [];
+      for (let i = 0; i < 80; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+      }
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+
+    window.addEventListener('resize', function(){
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      init();
+    });
+  </script>
+</body>
+</html>
